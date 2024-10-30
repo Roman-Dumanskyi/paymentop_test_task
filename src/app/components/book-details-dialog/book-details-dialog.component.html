@@ -1,0 +1,140 @@
+<div class="dialog-wrapper">
+
+  <button mat-dialog-close mat-icon-button aria-label="Close popup" class="close-icon">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div class="dialog-header d_f_r">
+    <h6>Інформація про книгу...</h6>
+
+    @if (mode === 'view') {
+      <div class="dialog-actions">
+        <button mat-icon-button aria-label="Edit book information" (click)="changeMode('edit')">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Delete book" (click)="deleteBook(bookForm.value.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    }
+
+  </div>
+  <form [formGroup]="bookForm">
+    <div class="dialog-content d_f_c">
+      <div class="details-item">
+        @if (mode === 'view') {
+          <label class="item-title">
+            Назва книги:
+          </label>
+          <span class="item-description">
+            {{ book.title }}
+          </span>
+        } @else {
+          <mat-form-field class="full-width">
+            <mat-label>Назва книги</mat-label>
+            <input type="text" matInput formControlName="title">
+          </mat-form-field>
+        }
+      </div>
+      <div class="details-item">
+        @if (mode === 'view') {
+          <label class="item-title">
+            Автор книги:
+          </label>
+          <span class="item-description">
+            {{ book.author }}
+          </span>
+        } @else {
+          <mat-form-field class="full-width">
+            <mat-label>Автор книги</mat-label>
+            <input type="text" matInput formControlName="author">
+          </mat-form-field>
+        }
+      </div>
+      <div class="details-item">
+        @if (mode === 'view') {
+          <span class="item-title">
+            Рік видання:
+          </span>
+          <span class="item-description">
+            {{ book.year }}
+          </span>
+        } @else {
+          <mat-form-field class="full-width">
+            <mat-label>Рік видання</mat-label>
+            <input type="number" matInput formControlName="year">
+          </mat-form-field>
+        }
+      </div>
+      <div class="details-item">
+        @if (mode === 'view') {
+          <span class="item-title">
+            Видавництво:
+          </span>
+          <span class="item-description">
+            {{ book.publishingHouse }}
+          </span>
+        } @else {
+          <mat-form-field class="full-width">
+            <mat-label>Видавництво</mat-label>
+            <input type="text" matInput formControlName="publishingHouse">
+          </mat-form-field>
+        }
+      </div>
+      <div class="details-item">
+        @if (mode === 'view') {
+          <span class="item-title">
+            Мова:
+          </span>
+          <span class="item-description">
+            {{ book.language }}
+          </span>
+        } @else {
+          <mat-form-field class="full-width">
+            <mat-label>Мова</mat-label>
+            <input type="text" matInput formControlName="language">
+          </mat-form-field>
+        }
+      </div>
+      <div class="details-item">
+        @if (mode === 'view') {
+          <span class="item-title">
+            Кількість сторінок:
+          </span>
+          <span class="item-description">
+            {{ book.numberOfPages }}
+          </span>
+        } @else {
+          <mat-form-field class="full-width">
+            <mat-label>Рік видання</mat-label>
+            <input type="number" matInput formControlName="numberOfPages">
+          </mat-form-field>
+        }
+      </div>
+      <div class="details-item">
+        @if (mode === 'view') {
+          <span class="item-title">
+            Опис книги:
+          </span>
+          <span class="item-description">
+            {{ book.description }}
+          </span>
+        } @else {
+          <mat-form-field class="full-width">
+            <mat-label>Рік видання</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+          </mat-form-field>
+        }
+      </div>
+    </div>
+  </form>
+  @if (mode !== 'view') {
+    <div class="dialog-footer">
+      <button mat-icon-button aria-label="Save book" (click)="saveBook()">
+        <mat-icon>save</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Close popup" (click)="changeMode('view')">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </div>
+  }
+</div>

@@ -1,0 +1,33 @@
+.dialog-wrapper {
+  position: relative;
+  padding: 60px 24px 24px 24px;
+
+  .dialog-header {
+    justify-content: space-between;
+  }
+
+  .dialog-content {
+    gap: 16px;
+  }
+
+  .item-title {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .close-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .dialog-footer {
+    display: flex;
+    justify-content: end;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+}

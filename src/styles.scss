@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+  width: 1600px;
+  margin: 0 auto;
+}
+
+.header {
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cdk-global-overlay-wrapper .cdk-overlay-pane.mat-mdc-dialog-panel {
+  max-width: none;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+
+// helpers
+
+.d_f_r {
+  display: flex;
+  flex-direction: row;
+}
+
+.d_f_c {
+  display: flex;
+  flex-direction: column;
+}
